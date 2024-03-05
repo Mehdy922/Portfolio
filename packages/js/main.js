@@ -168,3 +168,36 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
 });
+
+ function sendMessage() {
+    const name = document.getElementById('nameInput').value;
+    const email = document.getElementById('emailInput').value;
+    const subject = document.getElementById('subjectInput').value;
+    const description = document.getElementById('descriptionInput').value;
+
+    const xhr = new XMLHttpRequest();
+    const url = 'sendmail.php'; 
+    const params = 'name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email) + '&subject=' + encodeURIComponent(subject) + '&description=' + encodeURIComponent(description);
+
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            alert('Email sent successfully.');
+        } else {
+            alert('Failed to send email.');
+        }
+    };
+
+    xhr.send(params);
+}
+
+
+const colorChangeButton = document.getElementById('colorchange-button');
+const body = document.body;
+
+colorChangeButton.onclick = () => {
+    const hue = Math.floor(Math.random() * 360); // Generate a random hue value between 0 and 360
+    body.style.setProperty('--hue-color', hue);
+};

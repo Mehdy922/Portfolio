@@ -5,7 +5,8 @@
 :root {
   --header-height: 3rem;
 
-  /*========== Colors ==========*/
+body {
+    /*========== Colors ==========*/
  /* Change favorite color */
 --hue-color: 180; /* Blue-green hues for a warm day */
 
@@ -22,8 +23,7 @@
 --container-color: hsl(var(--hue-color), 60%, 92%); /* Container color */
 --scroll-bar-color: hsl(var(--hue-color), 30%, 90%); /* Scroll bar color */
 --scroll-thumb-color: hsl(var(--hue-color), 30%, 80%); /* Scroll thumb color */
-
-
+ }
   
 
   /*========== Font and typography ==========*/
@@ -1330,4 +1330,8 @@ img {
   .contact__inputs {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+#colorchange-button {
+    margin-left: 10px;
 }

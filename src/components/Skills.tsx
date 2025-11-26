@@ -44,36 +44,35 @@ const Skills = () => {
     {
       category: "Languages",
       skills: [
-        { name: "C", icon: "🅲" },
-        { name: "C++", icon: "➕" },
-        { name: "C#", icon: "♯" },
         { name: "Python", icon: "🐍" },
+        { name: "C++", icon: "➕" },
         { name: "JavaScript", icon: "🟨" },
         { name: "SQL", icon: "🗃️" },
-        { name: "Assembly x86", icon: "⚙️" }
+        { name: "Go", icon: "🔷" },
+        { name: "Solidity", icon: "⛓️" }
       ]
     },
     {
-      category: "Technologies & Tools",
+      category: "Frameworks & Tools",
       skills: [
         { name: "Flutter", icon: "📱" },
-        { name: "HTML", icon: "🌐" },
-        { name: "CSS", icon: "🎨" },
+        { name: "Django", icon: "🎯" },
+        { name: "Firebase", icon: "🔥" },
         { name: "Git", icon: "🧭" },
         { name: "AWS", icon: "☁️" },
-        { name: ".NET", icon: "🧩" },
         { name: "Linux", icon: "🐧" },
-        { name: "Unity", icon: "🎮" }
+        { name: "Unity", icon: "🎮" },
+        { name: "Web3", icon: "🌐" }
       ]
     },
     {
-      category: "Interests",
+      category: "Specializations",
       skills: [
-        { name: "Software Engineering", icon: "💻" },
-        { name: "Data Analysis", icon: "📊" },
-        { name: "Data Science", icon: "🧪" },
-        { name: "ML/AI", icon: "🤖" },
-        { name: "Cloud", icon: "🌩️" }
+        { name: "AI/ML", icon: "🤖" },
+        { name: "Product Management", icon: "📊" },
+        { name: "Full-Stack Dev", icon: "💻" },
+        { name: "Blockchain", icon: "⛓️" },
+        { name: "Cloud Computing", icon: "🌩️" }
       ]
     }
   ];

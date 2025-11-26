@@ -1,72 +1,74 @@
-
-import { useRef, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Users, Database, CreditCard, FileText, TrendingUp, Zap } from "lucide-react";
-import { useCountAnimation } from "@/hooks/useCountAnimation";
+import { ExternalLink, Users, Database, FileText, TrendingUp, Zap } from "lucide-react";
 
 const Projects = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  
-  // Count animations for metrics - fix the hook usage
-  const recordsMigrated = useCountAnimation({ end: 200, duration: 2000 });
-  const apisDeveloped = useCountAnimation({ end: 60, duration: 2000 });
 
   const projects = [
     {
       id: 1,
-      title: "Elder Ring (Real Time Monitoring System for Elderly People)",
-      description: "Developed an AI-based elderly monitoring system using YOLOv8 for gesture and posture recognition. Reduced caregiver workload by 40% through autonomous monitoring and real-time emergency alerts. Enhanced elderly safety with fall detection, custom gestures, sound-enabled commands, and a user-friendly Flutter interface.",
-      tags: ["Flutter", "Firebase", "Python", "YOLOv8", "Real-time Alerts"],
+      title: "Elder Ring – Real-Time Monitoring System (FYP)",
+      description: "Designed and implemented an AI-based elderly care system featuring real-time fall detection, custom gesture recognition, and distressing sound alerts. Automated monitoring reduced caregiver workload by 40%, improving operational efficiency while maintaining high care standards.",
+      tags: ["Flutter", "Firebase", "Python", "YOLOv8", "AI/ML"],
       icon: Users,
       metrics: "40% Less Caregiver Workload",
-      timeline: "",
+      timeline: "2024-2025",
       category: "AI Monitoring"
     },
     {
       id: 2,
-      title: "MoveOn (Vehicle Provisioning Application)",
-      description: "Designed and deployed a cross-platform app for Faizan Movers, streamlining real-time bookings for tours and wedding transport. Implemented a secure backend with Firebase Auth, Firestore, and Cloud Functions.",
-      tags: ["Flutter", "Firebase Auth", "Firestore", "Cloud Functions"],
+      title: "MoveOn – Vehicle Provisioning System",
+      description: "Designed and deployed a cross-platform fleet management application for Faizan Movers, enabling real-time bookings for tours and wedding transport with 100+ registered users (40+ MAU). Engineered scalable backend architecture using Firebase Auth, Firestore, and Cloud Functions, reducing booking processing time by 60%.",
+      tags: ["Flutter", "Firebase", "Firestore", "Cloud Functions"],
       icon: TrendingUp,
       metrics: "100+ Users • 40+ MAU",
-      timeline: "",
+      timeline: "2024",
       category: "Mobile App"
     },
     {
       id: 3,
-      title: "HWCS (Handwriting Classification System)",
-      description: "Achieved 93% accuracy in handwriting classification using KNN and GSCM. Reduced classification errors by 30% through optimized preprocessing, scaling, and model training. Integrated into a Django-based application.",
-      tags: ["Python", "KNN", "GSCM", "Django"],
+      title: "HWCS – Handwriting Classification System",
+      description: "Developed a handwriting recognition model by training on a custom dataset, leveraging Grey Scale Co-occurrence Matrix (GSCM) for feature extraction. Achieved 93% classification accuracy, outperforming baseline methods by 30% in error reduction. Deployed the optimized model into a Django web application.",
+      tags: ["Python", "KNN", "GSCM", "Django", "ML"],
       icon: FileText,
       metrics: "93% Accuracy",
-      timeline: "",
+      timeline: "2024",
       category: "ML/AI"
     },
     {
       id: 4,
-      title: "Janwar (Pet Adoption E-Commerce Platform)",
-      description: "Built a pet adoption and sales platform with features for buying pets, adopting pets, and selling accessories.",
-      tags: ["MongoDB Atlas", "Express", "React", "Node.js"],
-      icon: Database,
-      metrics: "Full-Stack MERN",
-      timeline: "",
-      category: "E-Commerce"
+      title: "BaatCheet – Decentralized Chat App",
+      description: "Developed anonymous blockchain-based decentralized chat application with MetaMask login integration. Built using Go for backend services and Solidity for smart contracts, ensuring secure and private communication.",
+      tags: ["Go", "Solidity", "Web3", "Blockchain"],
+      icon: Zap,
+      metrics: "Blockchain-Based",
+      timeline: "2024",
+      category: "Web3"
     },
     {
       id: 5,
-      title: "Libra Links (Personalized Content Chatbot — GHW 2023)",
-      description: "WhatsApp chatbot delivering personalized download links for over 100 books, movies, and anime. Developed during MLH Global Hack Week 2023.",
+      title: "Janwar – Pet Adoption Platform",
+      description: "Built a user-friendly e-commerce application for pet adoption and accessories. Included secure posting, real-time chat, and payment flows using the MERN stack.",
+      tags: ["MongoDB", "Express", "React", "Node.js"],
+      icon: Database,
+      metrics: "Full-Stack MERN",
+      timeline: "2023",
+      category: "E-Commerce"
+    },
+    {
+      id: 6,
+      title: "LibraLinks – Personalized Content Chatbot",
+      description: "Built during MLH Global Hack Week 2023 with a team member. Developed a WhatsApp chatbot delivering personalized download links for over 100 books, movies, and anime.",
       tags: ["Python", "Node.js", "WhatsApp Bot"],
       icon: Zap,
-      metrics: "100+ Personalized Links",
+      metrics: "100+ Content Links",
       timeline: "2023",
       category: "Chatbot"
     }
   ];
 
   return (
-    <section ref={sectionRef} className="py-20 bg-muted/30 relative overflow-hidden">
+    <section className="py-20 bg-muted/30 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-background/50 to-muted/50"></div>
       
       <div className="container mx-auto px-6 relative">
@@ -147,18 +149,24 @@ const Projects = () => {
 
         {/* Experience Summary */}
         <div className="mt-20 text-center">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-md mx-auto">
-            <div ref={recordsMigrated.ref} className="space-y-2">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+            <div className="space-y-2">
               <div className="text-3xl font-bold text-primary">
-                {recordsMigrated.count}K+
+                6+
               </div>
-              <div className="text-sm text-muted-foreground">Records Migrated</div>
+              <div className="text-sm text-muted-foreground">Major Projects</div>
             </div>
-            <div ref={apisDeveloped.ref} className="space-y-2">
+            <div className="space-y-2">
               <div className="text-3xl font-bold text-primary">
-                {apisDeveloped.count}+
+                100+
               </div>
-              <div className="text-sm text-muted-foreground">APIs Developed</div>
+              <div className="text-sm text-muted-foreground">Active Users</div>
+            </div>
+            <div className="space-y-2">
+              <div className="text-3xl font-bold text-primary">
+                93%
+              </div>
+              <div className="text-sm text-muted-foreground">ML Accuracy</div>
             </div>
           </div>
         </div>

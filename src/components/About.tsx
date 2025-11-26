@@ -40,7 +40,7 @@ const About = () => {
           <div className="relative group">
             <div className="relative overflow-hidden rounded-2xl">
               <img 
-                src="/lovable-uploads/10d1cd26-56bc-4d53-adb4-3cc18579ef42.png" 
+                src="/Portfolio/lovable-uploads/10d1cd26-56bc-4d53-adb4-3cc18579ef42.png" 
                 alt="Muhammad Mehdy Hasnain" 
                 className="w-full h-[500px] object-cover animate-float transition-transform duration-500 group-hover:scale-105"
               />

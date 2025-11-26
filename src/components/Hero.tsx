@@ -108,7 +108,7 @@ const Hero = () => {
           <div className="col-span-6 relative flex justify-center items-center">
             <div className="relative group">
               <img 
-                src="/lovable-uploads/42770261-a649-4968-b9bf-e6c5af9d4c87.png"
+                src="/Portfolio/lovable-uploads/42770261-a649-4968-b9bf-e6c5af9d4c87.png"
                 alt="Muhammad Mehdy Hasnain - Software Developer"
                 className="w-full max-w-2xl animate-float group-hover:scale-105 transition-transform duration-500"
               />

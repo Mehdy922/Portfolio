@@ -81,8 +81,10 @@ const Projects = () => {
 
         {/* Timeline Container */}
         <div className="relative max-w-6xl mx-auto">
-          {/* Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-0.5 h-full w-0.5 bg-gradient-to-b from-blue-500 to-blue-300"></div>
+          {/* Timeline Line - Hidden on mobile */}
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-0.5 h-full w-0.5 bg-gradient-to-b from-blue-500 to-blue-300"></div>
+          {/* Timeline Line - Mobile */}
+          <div className="md:hidden absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-blue-300"></div>
 
           {/* Projects */}
           <div className="space-y-8">
@@ -92,20 +94,22 @@ const Projects = () => {
               
               return (
                 <div key={project.id} className="relative">
-                  {/* Timeline dot */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background shadow-lg z-10"></div>
+                  {/* Timeline dot - Desktop */}
+                  <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background shadow-lg z-10"></div>
+                  {/* Timeline dot - Mobile */}
+                  <div className="md:hidden absolute left-4 transform -translate-x-1/2 w-3 h-3 bg-primary rounded-full border-2 border-background shadow-lg z-10"></div>
                   
-                  {/* Project Card */}
-                  <div className={`flex ${isLeft ? 'justify-start' : 'justify-end'}`}>
+                  {/* Project Card - Desktop */}
+                  <div className={`hidden md:flex ${isLeft ? 'justify-start' : 'justify-end'}`}>
                     <div className={`w-5/12 ${isLeft ? 'pr-8' : 'pl-8'}`}>
                       <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card border-border">
                         <CardContent className="p-6">
                           <div className="flex items-start gap-4 mb-4">
-                            <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary/30 transition-colors">
+                            <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary/30 transition-colors flex-shrink-0">
                               <IconComponent className="text-primary" size={24} />
                             </div>
-                            <div className="flex-1">
-                              <div className="flex items-center justify-between mb-2">
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
                                 <Badge variant="secondary" className="text-xs">
                                   {project.category}
                                 </Badge>
@@ -119,7 +123,7 @@ const Projects = () => {
                             </div>
                           </div>
                           
-                          <p className="text-muted-foreground mb-4 leading-relaxed">
+                          <p className="text-muted-foreground mb-4 leading-relaxed text-sm">
                             {project.description}
                           </p>
                           
@@ -140,6 +144,51 @@ const Projects = () => {
                         </CardContent>
                       </Card>
                     </div>
+                  </div>
+
+                  {/* Project Card - Mobile */}
+                  <div className="md:hidden pl-10 pr-4">
+                    <Card className="group hover:shadow-xl transition-all duration-300 bg-card border-border">
+                      <CardContent className="p-4">
+                        <div className="flex items-start gap-3 mb-3">
+                          <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary/30 transition-colors flex-shrink-0">
+                            <IconComponent className="text-primary" size={20} />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center gap-2 mb-1 flex-wrap">
+                              <Badge variant="secondary" className="text-xs">
+                                {project.category}
+                              </Badge>
+                              <span className="text-xs font-semibold text-primary">
+                                {project.timeline}
+                              </span>
+                            </div>
+                            <h3 className="text-base font-bold mb-2 group-hover:text-primary transition-colors">
+                              {project.title}
+                            </h3>
+                          </div>
+                        </div>
+                        
+                        <p className="text-muted-foreground mb-3 leading-relaxed text-sm">
+                          {project.description}
+                        </p>
+                        
+                        <div className="flex flex-wrap gap-1.5 mb-3">
+                          {project.tags.map((tag) => (
+                            <Badge key={tag} variant="outline" className="text-xs">
+                              {tag}
+                            </Badge>
+                          ))}
+                        </div>
+                        
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs font-semibold text-primary">
+                            {project.metrics}
+                          </span>
+                          <ExternalLink size={14} className="text-muted-foreground group-hover:text-primary transition-colors" />
+                        </div>
+                      </CardContent>
+                    </Card>
                   </div>
                 </div>
               );
